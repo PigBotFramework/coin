@@ -160,3 +160,5 @@ class coin(PBF):
         if userCoin == False:
             return self.client.msg().raw('用户未注册')
         self.client.msg().raw('[CQ:face,id=54] 成功给用户{0}添加{1}个好感度'.format(userid, userCoin))
+        
+        cache.refreshFromSql('userCoin')
